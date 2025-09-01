@@ -1,0 +1,265 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
+}
+
+/* Container principal con Flexbox */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar (columna izquierda) */
+.sidebar {
+  flex-basis: 25%;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 15px 0 0 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header del sidebar */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 10px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Perfil de usuario */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #333;
+  margin: 0;
+}
+
+.user-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #4caf50;
+  border-radius: 50%;
+}
+
+.status-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Acciones del header */
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.header-actions i {
+  font-size: 1.2em;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.header-actions i:hover {
+  color: #333;
+}
+
+/* Sección del botón Nuevo Chat */
+.new-chat-section {
+  display: flex;
+  padding: 40px 0;
+  border-bottom: 1px solid #e0e0e0;
+  justify-content: center;
+}
+
+.new-chat-btn {
+  padding: 15px 50px;
+  background-color: #a491d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-chat-btn:hover {
+  background-color: #cdc3e6;
+}
+
+/* Sección de chats */
+.chats-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.chats-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+.chats-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.chats-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chats-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chats-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.chats-list::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.chat-item:hover {
+  background-color: #e8ebe4;
+}
+
+.chat-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.chat-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.chat-name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.chat-message {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  color: #666;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Main content (columna derecha) */
+.main-content {
+  flex: 1;
+  background-color: #e8ebe4;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Imagen del handshake */
+.hand-icon {
+  height: 35%;
+  border-radius: 15px;
+}
+
+/* Contenedor de texto */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Título principal */
+.main-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 2.8125em; /* 45px / 16px = 2.8125em */
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+
+/* Subtítulo */
+.main-subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.875em; /* 14px / 16px = 0.875em */
+  color: #333;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.2;
+  margin: 0;
+}
