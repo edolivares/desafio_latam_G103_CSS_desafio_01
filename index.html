@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat App</title>
+    <title>Chat App | Contact Me SPA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +22,12 @@
   <body>
     <div class="container">
       <aside class="sidebar">
+        <!-- Íconos móviles (solo visible en móvil) -->
+        <div class="mobile-icons">
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-bars"></i>
+        </div>
+
         <!-- Header del sidebar -->
         <header class="sidebar-header">
           <div class="user-profile">
@@ -46,7 +52,7 @@
 
         <!-- Botón Nuevo Chat -->
         <section class="new-chat-section">
-          <button class="new-chat-btn">Nuevo Chat</button>
+          <button class="new-chat-btn"><span>Nuevo Chat</span></button>
         </section>
 
         <!-- Lista de chats -->
@@ -56,7 +62,7 @@
               <img
                 src="assets/images/users/1.jpg"
                 alt="Juanita"
-                class="chat-avatar"
+                class="chat-avatar has-notifications"
               />
               <div class="chat-info">
                 <h3 class="chat-name">Juanita</h3>
@@ -67,7 +73,7 @@
               <img
                 src="assets/images/users/2.jpg"
                 alt="Alberto"
-                class="chat-avatar"
+                class="chat-avatar inactive"
               />
               <div class="chat-info">
                 <h3 class="chat-name">Alberto</h3>
@@ -78,7 +84,7 @@
               <img
                 src="assets/images/users/3.jpg"
                 alt="Ignacio"
-                class="chat-avatar"
+                class="chat-avatar has-notifications"
               />
               <div class="chat-info">
                 <h3 class="chat-name">Ignacio</h3>
@@ -100,7 +106,7 @@
               <img
                 src="assets/images/users/5.jpg"
                 alt="María José"
-                class="chat-avatar"
+                class="chat-avatar inactive"
               />
               <div class="chat-info">
                 <h3 class="chat-name">María José</h3>
@@ -111,7 +117,7 @@
               <img
                 src="assets/images/users/6.jpg"
                 alt="Gonzalo"
-                class="chat-avatar"
+                class="chat-avatar has-notifications"
               />
               <div class="chat-info">
                 <h3 class="chat-name">Gonzalo</h3>

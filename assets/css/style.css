@@ -51,6 +51,7 @@ body {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid #4caf50; /* Estado activo por defecto */
 }
 
 .user-info {
@@ -191,6 +192,8 @@ body {
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  position: relative;
+  border: 2px solid #4caf50; /* Estado activo por defecto */
 }
 
 .chat-info {
@@ -214,6 +217,36 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Estados de disponibilidad para avatares */
+.profile-pic.inactive {
+  border-color: #bec1bb; /* Gris para inactivo */
+}
+
+.chat-avatar.inactive {
+  border-color: #bec1bb; /* Gris para inactivo */
+}
+
+/* Íconos móviles (ocultos por defecto) */
+.mobile-icons {
+  display: none;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0 15px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-icons i {
+  font-size: 1.2em;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.mobile-icons i:hover {
+  color: #333;
 }
 
 /* Main content (columna derecha) */
@@ -262,4 +295,147 @@ body {
   max-width: 600px;
   line-height: 1.2;
   margin: 0;
+}
+
+/* Media Queries para Tablet */
+@media (max-width: 768px) {
+  /* Ocultar texto de estado en tablet */
+  .status-text {
+    display: none;
+  }
+
+  /* Ocultar punto verde de estado en tablet */
+  .status-dot {
+    display: none;
+  }
+}
+
+/* Media Queries para Mobile */
+@media (max-width: 576px) {
+  /* Sidebar colapsado en mobile */
+  .sidebar {
+    flex-basis: 80px;
+    padding: 10px 0 0 0;
+  }
+
+  /* Header colapsado */
+  .sidebar-header {
+    padding: 0px 10px 10px 10px;
+    flex-direction: column-reverse;
+    gap: 10px;
+    position: relative;
+  }
+
+  /* Ocultar información del usuario en mobile */
+  .user-info {
+    display: none;
+  }
+
+  /* Perfil de usuario centrado */
+  .user-profile {
+    justify-content: center;
+  }
+
+  /* Mostrar íconos móviles */
+  .mobile-icons {
+    display: flex;
+  }
+
+  /* Ocultar íconos del header en móvil */
+  .header-actions {
+    display: none;
+  }
+
+  /* Ocultar título de chats */
+  .chats-section h2 {
+    display: none;
+  }
+
+  /* Ocultar información de chat */
+  .chat-info {
+    display: none;
+  }
+
+  /* Chat items centrados */
+  .chat-item {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  /* Badge de mensajes nuevos */
+  .chat-avatar.has-notifications::after {
+    content: "+1";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff4757;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Imagen del handshake más pequeña en mobile */
+  .hand-icon {
+    height: 20%;
+  }
+
+  /* Bordes de disponibilidad para avatares */
+  .profile-pic {
+    border: 3px solid #4caf50;
+  }
+
+  .chat-avatar {
+    border: 2px solid #4caf50;
+    position: relative;
+  }
+
+  /* Ocultar texto de estado y punto verde en mobile */
+  .status-text {
+    display: none;
+  }
+
+  .status-dot {
+    display: none;
+  }
+
+  /* Ocultar texto del botón y mostrar solo ícono */
+  .new-chat-btn {
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ajustar padding de la sección nuevo chat en móvil */
+  .new-chat-section {
+    padding: 25px 0;
+  }
+
+  .new-chat-btn::before {
+    content: "\f075";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.2em;
+  }
+
+  .new-chat-btn span {
+    display: none;
+  }
+
+  /* Título principal más pequeño en mobile */
+  .main-title {
+    font-size: 2em; /* Reducido de 2.8125em a 2em */
+  }
 }
